@@ -82,7 +82,7 @@ if uploaded_file is not None:
         ax = sns.heatmap(user_heatmap)
         st.pyplot(fig)
 
-        # finding the busiest users in the group(Group level)
+        # Finding the Busiest Users in the Group(Group level)
         if selected_user == 'Overall':
             st.title('Most Busy Users')
             x,new_df = helper.most_busy_users(df)
@@ -104,7 +104,7 @@ if uploaded_file is not None:
         ax.imshow(df_wc)
         st.pyplot(fig)
 
-        # most common words
+        # Most Common Words
         most_common_df = helper.most_common_words(selected_user,df)
 
         fig,ax = plt.subplots()
@@ -115,7 +115,7 @@ if uploaded_file is not None:
         st.title('Most Common Words')
         st.pyplot(fig)
 
-        # emoji analysis
+        # Emoji Analysis
         emoji_df = helper.emoji_helper(selected_user,df)
         st.title("Emoji Analysis")
 
