@@ -8,7 +8,7 @@ import plotly.express as px
 
 rcParams['font.family'] = 'DejaVu Sans'
 
-st.sidebar.title("Whatsapp Chat Analyzer")
+st.sidebar.title("WhatsApp Chat Analyzer")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 if uploaded_file is not None:
@@ -16,7 +16,7 @@ if uploaded_file is not None:
     data = bytes_data.decode("utf-8")
     df = preprocessor.preprocess(data)
 
-    # fetch unique users
+    # Fetching Unique Users
     user_list = df['user'].unique().tolist()
     user_list.remove('group_notification')
     user_list.sort()
