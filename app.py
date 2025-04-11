@@ -37,10 +37,10 @@ if uploaded_file is not None:
 
         stats_df = pd.DataFrame(stats_data)
 
-        # Display as table
+        # Displaying as table
         st.table(stats_df)
 
-        # monthly timeline
+        # Monthly Timeline
         st.title("Monthly Timeline")
         timeline = helper.monthly_timeline(selected_user,df)
         fig,ax = plt.subplots()
@@ -48,7 +48,7 @@ if uploaded_file is not None:
         plt.xticks(rotation='vertical')
         st.pyplot(fig)
 
-        # daily timeline
+        # Daily Timeline
         st.title("Daily Timeline")
         daily_timeline = helper.daily_timeline(selected_user, df)
         fig, ax = plt.subplots()
@@ -56,12 +56,12 @@ if uploaded_file is not None:
         plt.xticks(rotation='vertical')
         st.pyplot(fig)
 
-        # activity map
+        # Activity Map
         st.title('Activity Map')
         col1,col2 = st.columns(2)
 
         with col1:
-            st.header("Most busy day")
+            st.header("Most Busy Day")
             busy_day = helper.week_activity_map(selected_user,df)
             fig,ax = plt.subplots()
             ax.bar(busy_day.index,busy_day.values,color='blue')
@@ -69,7 +69,7 @@ if uploaded_file is not None:
             st.pyplot(fig)
 
         with col2:
-            st.header("Most busy month")
+            st.header("Most Busy Month")
             busy_month = helper.month_activity_map(selected_user, df)
             fig, ax = plt.subplots()
             ax.bar(busy_month.index, busy_month.values,color='black')
